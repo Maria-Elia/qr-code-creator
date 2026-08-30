@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import PalettePresets from './PalettePresets.jsx';
+import { readImageFile } from '../lib/readImageFile.js';
 
 const DOT_TYPES = ['square', 'rounded', 'dots', 'classy', 'extra-rounded'];
 const CORNER_SQUARE_TYPES = ['square', 'dot', 'extra-rounded'];
@@ -70,6 +72,25 @@ export default function DesignPanel({ qrOptions, onChange }) {
         dotsOptions: { ...prev.dotsOptions, gradient: { ...prev.dotsOptions.gradient, colorStops } },
       };
     });
+  }
+
+  const [logoError, setLogoError] = useState('');
+
+  async function handleLogoChange(e) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      const dataUrl = await readImageFile(file);
+      setLogoError('');
+      onChange((prev) => ({ ...prev, image: dataUrl }));
+    } catch (err) {
+      setLogoError(err.message);
+    }
+  }
+
+  function clearLogo() {
+    setLogoError('');
+    onChange((prev) => ({ ...prev, image: null }));
   }
 
   return (
@@ -146,6 +167,16 @@ export default function DesignPanel({ qrOptions, onChange }) {
           onChange={(e) => setBackgroundColor(e.target.value)}
         />
       </label>
+      <label className="field">
+        Logo (optional)
+        <input type="file" accept="image/png,image/jpeg,image/svg+xml,image/webp" onChange={handleLogoChange} />
+      </label>
+      {logoError && <p className="field-error">{logoError}</p>}
+      {qrOptions.image && (
+        <button type="button" className="secondary-button" onClick={clearLogo}>
+          Remove logo
+        </button>
+      )}
     </div>
   );
 }
