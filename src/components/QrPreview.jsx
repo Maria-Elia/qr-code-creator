@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import QRCodeStyling from 'qr-code-styling';
 
 function toLibraryOptions(options) {
@@ -23,9 +23,17 @@ function toLibraryOptions(options) {
   };
 }
 
-export default function QrPreview({ options }) {
+const QrPreview = forwardRef(function QrPreview({ options }, ref) {
   const containerRef = useRef(null);
   const qrRef = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    download() {
+      if (qrRef.current) {
+        qrRef.current.download({ name: 'qr-code', extension: 'png' });
+      }
+    },
+  }));
 
   useEffect(() => {
     qrRef.current = new QRCodeStyling(toLibraryOptions(options));
@@ -50,6 +58,7 @@ export default function QrPreview({ options }) {
   }, [options]);
 
   return <div className="qr-preview" ref={containerRef} />;
-}
+});
 
+export default QrPreview;
 export { toLibraryOptions };
