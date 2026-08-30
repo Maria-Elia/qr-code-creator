@@ -287,6 +287,143 @@ body {
   border-radius: 12px;
 }
 
+.frame-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.frame-border,
+.frame-bordered {
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 20px;
+  overflow: hidden;
+  display: inline-flex;
+  flex-direction: column;
+  background: white;
+}
+
+.frame-bar {
+  padding: 0.6rem 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.frame-corner-marks {
+  position: relative;
+  display: inline-block;
+  padding: 1.5rem;
+}
+
+.corner-mark {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.corner-tl {
+  top: 0;
+  left: 0;
+  border-top-width: 4px;
+  border-left-width: 4px;
+}
+
+.corner-tr {
+  top: 0;
+  right: 0;
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.corner-bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.corner-br {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
+
+.frame-label-plain {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.frame-ribbon {
+  padding: 0.5rem 2rem;
+  margin-top: -0.75rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  clip-path: polygon(0 50%, 10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
+}
+
+.frame-circle {
+  position: relative;
+  border-radius: 50%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-circle-inner {
+  background: white;
+  border-radius: 50%;
+  /* Must exceed the QR square's half-diagonal (~0.707 * side) so its
+     corners stay inside the circle instead of poking past the ring.
+     Kept tight (small margin over the minimum) so the QR renders as
+     large and scannable as possible within the circle. */
+  padding: 4.1rem;
+}
+
+.frame-circle-inner .qr-preview {
+  padding: 0;
+}
+
+.frame-pill {
+  margin-top: -1rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.frame-viewfinder {
+  position: relative;
+  display: inline-block;
+  padding: 1.5rem;
+}
+
+.viewfinder-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.circle-band-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 .primary-button,
 .secondary-button {
   font-family: 'Fredoka', sans-serif;

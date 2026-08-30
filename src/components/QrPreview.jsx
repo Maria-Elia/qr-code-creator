@@ -48,6 +48,9 @@ const QrPreview = forwardRef(function QrPreview({ options }, ref) {
         qrRef.current.download({ name: 'qr-code', extension: 'png' });
       }
     },
+    getCanvas() {
+      return containerRef.current ? containerRef.current.querySelector('canvas') : null;
+    },
   }));
 
   useEffect(() => {

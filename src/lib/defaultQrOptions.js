@@ -13,5 +13,15 @@ export function createDefaultQrOptions() {
     backgroundOptions: { color: '#ffffff' },
     image: null,
     imageOptions: { crossOrigin: 'anonymous', margin: 4, imageSize: 0.4 },
+    frame: {
+      style: 'none',
+      borderColor: BRAND_INK,
+      fillColor: BRAND_INK,
+      text: 'SCAN ME',
+      font: 'Arial',
+      textColor: '#ffffff',
+      plainTextColor: BRAND_INK,
+      bandTextColor: '#000000',
+    },
   };
 }

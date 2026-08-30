@@ -2,10 +2,12 @@ import { useState } from 'react';
 import PatternEyesFields from './design/PatternEyesFields.jsx';
 import ColorFields from './design/ColorFields.jsx';
 import LogoField from './design/LogoField.jsx';
+import FrameFields from './design/FrameFields.jsx';
 
 const TABS = [
   { id: 'shape', label: 'Shape', Fields: PatternEyesFields },
   { id: 'colors', label: 'Colors', Fields: ColorFields },
+  { id: 'frame', label: 'Frame', Fields: FrameFields },
   { id: 'logo', label: 'Logo', Fields: LogoField },
 ];
 

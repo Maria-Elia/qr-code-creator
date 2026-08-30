@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { createDefaultQrOptions } from './lib/defaultQrOptions.js';
-import QrPreview from './components/QrPreview.jsx';
+import FramePreview from './components/FramePreview.jsx';
 import ContentPanel from './components/ContentPanel.jsx';
 import DesignPanel from './components/DesignPanel.jsx';
 import ExportButton from './components/ExportButton.jsx';
@@ -28,7 +28,7 @@ export default function App() {
         </div>
         <div className="preview-column">
           {!hasContent && <p className="field-error">Enter some content above to generate a QR code.</p>}
-          <QrPreview ref={qrPreviewRef} options={qrOptions} />
+          <FramePreview ref={qrPreviewRef} options={qrOptions} />
           <ExportButton onExport={handleExport} disabled={!hasContent} />
         </div>
       </div>
