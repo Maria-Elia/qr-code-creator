@@ -41,9 +41,12 @@ export default function QrPreview({ options }) {
   }, []);
 
   useEffect(() => {
-    if (qrRef.current) {
-      qrRef.current.update(toLibraryOptions(options));
-    }
+    const timer = setTimeout(() => {
+      if (qrRef.current) {
+        qrRef.current.update(toLibraryOptions(options));
+      }
+    }, 150);
+    return () => clearTimeout(timer);
   }, [options]);
 
   return <div className="qr-preview" ref={containerRef} />;
