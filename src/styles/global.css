@@ -122,6 +122,15 @@ body {
   color: var(--ink);
 }
 
+.field-disabled {
+  opacity: 0.4;
+}
+
+.field-disabled input,
+.field-disabled select {
+  cursor: not-allowed;
+}
+
 .checkbox-field {
   flex-direction: row;
   align-items: center;
@@ -189,6 +198,14 @@ body {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.preset-row.preset-row-icons {
+  /* Fixed column count instead of flex-wrap so the number of rows never
+     changes with small container-width fluctuations (e.g. a scrollbar
+     appearing when a taller preview is selected) — deterministic layout. */
+  display: grid;
+  grid-template-columns: repeat(6, 44px);
 }
 
 .preset-button {
@@ -431,12 +448,16 @@ body {
   padding: 0.6rem 1.4rem;
   border: none;
   cursor: pointer;
+}
+
+.secondary-button {
   align-self: flex-start;
 }
 
 .primary-button {
   background: var(--purple);
   color: white;
+  align-self: center;
 }
 
 .primary-button:disabled {

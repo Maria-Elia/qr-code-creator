@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const HEX_PATTERN = /^#([0-9A-Fa-f]{6})$/;
 
-export default function HexColorInput({ value, onChange }) {
+export default function HexColorInput({ value, onChange, disabled = false }) {
   const [text, setText] = useState(value);
 
   useEffect(() => {
@@ -31,8 +31,15 @@ export default function HexColorInput({ value, onChange }) {
         onChange={handleTextChange}
         placeholder="#000000"
         spellCheck={false}
+        disabled={disabled}
       />
-      <input type="color" className="color-swatch-input" value={value} onChange={handlePickerChange} />
+      <input
+        type="color"
+        className="color-swatch-input"
+        value={value}
+        onChange={handlePickerChange}
+        disabled={disabled}
+      />
     </span>
   );
 }

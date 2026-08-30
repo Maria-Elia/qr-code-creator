@@ -33,11 +33,17 @@ export default function FrameFields({ qrOptions, onChange }) {
     onChange((prev) => ({ ...prev, frame: { ...prev.frame, [field]: value } }));
   }
 
+  const borderDisabled = NO_BORDER_STYLES.has(frame.style);
+  const fillDisabled = NO_FILL_STYLES.has(frame.style);
+  const textDisabled = NO_TEXT_STYLES.has(frame.style);
+  const textColorDisabled = textDisabled || MONOCHROME_TEXT_STYLES.has(frame.style);
+  const textColorField = TEXT_COLOR_FIELD[frame.style] || 'textColor';
+
   return (
     <>
       <div className="field">
         Frame
-        <div className="preset-row">
+        <div className="preset-row preset-row-icons">
           {FRAME_STYLES.map((style) => (
             <button
               key={style.value}
@@ -54,55 +60,59 @@ export default function FrameFields({ qrOptions, onChange }) {
           ))}
         </div>
       </div>
-      {frame.style !== 'none' && (
-        <>
-          {!NO_BORDER_STYLES.has(frame.style) && (
-            <div className="field">
-              Border color
-              <HexColorInput value={frame.borderColor} onChange={(hex) => setFrameField('borderColor', hex)} />
-            </div>
-          )}
-          {!NO_FILL_STYLES.has(frame.style) && (
-            <div className="field">
-              Fill color
-              <HexColorInput value={frame.fillColor} onChange={(hex) => setFrameField('fillColor', hex)} />
-            </div>
-          )}
-          {!NO_TEXT_STYLES.has(frame.style) && (
-            <>
-              <label className="field">
-                Frame text (max 15 characters)
-                <input
-                  type="text"
-                  maxLength={15}
-                  value={frame.text}
-                  onChange={(e) => setFrameField('text', e.target.value)}
-                />
-              </label>
-              <label className="field">
-                Frame font
-                <select value={frame.font} onChange={(e) => setFrameField('font', e.target.value)}>
-                  {FRAME_FONTS.map((font) => (
-                    <option key={font} value={font}>
-                      {font}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              {!MONOCHROME_TEXT_STYLES.has(frame.style) &&
-                (() => {
-                  const field = TEXT_COLOR_FIELD[frame.style] || 'textColor';
-                  return (
-                    <div className="field">
-                      Text color
-                      <HexColorInput value={frame[field]} onChange={(hex) => setFrameField(field, hex)} />
-                    </div>
-                  );
-                })()}
-            </>
-          )}
-        </>
-      )}
+
+      <div className={borderDisabled ? 'field field-disabled' : 'field'}>
+        Border color
+        <HexColorInput
+          value={frame.borderColor}
+          onChange={(hex) => setFrameField('borderColor', hex)}
+          disabled={borderDisabled}
+        />
+      </div>
+
+      <div className={fillDisabled ? 'field field-disabled' : 'field'}>
+        Fill color
+        <HexColorInput
+          value={frame.fillColor}
+          onChange={(hex) => setFrameField('fillColor', hex)}
+          disabled={fillDisabled}
+        />
+      </div>
+
+      <label className={textDisabled ? 'field field-disabled' : 'field'}>
+        Frame text (max 15 characters)
+        <input
+          type="text"
+          maxLength={15}
+          value={frame.text}
+          onChange={(e) => setFrameField('text', e.target.value)}
+          disabled={textDisabled}
+        />
+      </label>
+
+      <label className={textDisabled ? 'field field-disabled' : 'field'}>
+        Frame font
+        <select
+          value={frame.font}
+          onChange={(e) => setFrameField('font', e.target.value)}
+          disabled={textDisabled}
+        >
+          {FRAME_FONTS.map((font) => (
+            <option key={font} value={font}>
+              {font}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <div className={textColorDisabled ? 'field field-disabled' : 'field'}>
+        Text color
+        <HexColorInput
+          value={frame[textColorField]}
+          onChange={(hex) => setFrameField(textColorField, hex)}
+          disabled={textColorDisabled}
+        />
+      </div>
     </>
   );
 }

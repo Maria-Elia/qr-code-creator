@@ -36,7 +36,7 @@ export default function PatternEyesFields({ qrOptions, onChange }) {
     <>
       <div className="field">
         Pattern
-        <div className="preset-row">
+        <div className="preset-row preset-row-icons">
           {PATTERN_PRESETS.map((preset) => (
             <button
               key={preset.label}
@@ -55,7 +55,7 @@ export default function PatternEyesFields({ qrOptions, onChange }) {
       </div>
       <div className="field">
         Eyes
-        <div className="preset-row">
+        <div className="preset-row preset-row-icons">
           {EYE_PRESETS.map((preset) => (
             <button
               key={preset.label}
