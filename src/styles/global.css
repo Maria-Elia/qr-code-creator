@@ -1,4 +1,10 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
 
 :root {
   --teal: #0f7f88;
@@ -15,7 +21,7 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: var(--bg);
   color: var(--ink);
 }
@@ -30,7 +36,7 @@ body {
 }
 
 .app h1 {
-  font-family: 'Fredoka', sans-serif;
+  font-family: "Fredoka", sans-serif;
   color: var(--purple);
   margin: 0;
 }
@@ -62,6 +68,7 @@ body {
 @media (max-width: 860px) {
   .workspace {
     flex-direction: column-reverse;
+    align-items: stretch;
   }
 
   .preview-column {
@@ -79,6 +86,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 0;
 }
 
 .tabs {
@@ -94,7 +102,7 @@ body {
   border-radius: 999px;
   padding: 0.4rem 1rem;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .tab.active {
@@ -115,7 +123,7 @@ body {
 .field input,
 .field select,
 .field textarea {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 0.5rem;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -177,7 +185,7 @@ body {
 
 .hex-input {
   width: 6.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 0.4rem 0.5rem;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -209,7 +217,7 @@ body {
 }
 
 .preset-button {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid var(--line);
   background: var(--bg);
   color: var(--ink-soft);
@@ -277,7 +285,7 @@ body {
   gap: 0.3rem;
   padding: 0.35rem 0.9rem;
   font-size: 0.85rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   align-self: flex-start;
 }
 
@@ -443,7 +451,7 @@ body {
 
 .primary-button,
 .secondary-button {
-  font-family: 'Fredoka', sans-serif;
+  font-family: "Fredoka", sans-serif;
   border-radius: 999px;
   padding: 0.6rem 1.4rem;
   border: none;
@@ -470,4 +478,67 @@ body {
   background: var(--bg);
   border: 1px solid var(--line);
   color: var(--ink-soft);
+}
+
+@media (max-width: 860px) {
+  .app {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .field,
+  .field-group > .field {
+    font-size: 1rem;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .tab {
+    padding: 0.7rem 1.15rem;
+    font-size: 1rem;
+  }
+
+  .preset-row:not(.preset-row-icons) {
+    row-gap: 0.6rem;
+  }
+
+  .preset-row.preset-row-icons {
+    grid-template-columns: repeat(5, 44px);
+  }
+
+  .preset-button:not(.icon-button) {
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  .swatch {
+    width: 36px;
+    height: 36px;
+  }
+
+  .color-swatch-input {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hex-input {
+    font-size: 1rem;
+    padding: 0.55rem 0.6rem;
+  }
+
+  .swap-button {
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 0.75rem 1.6rem;
+    font-size: 1.05rem;
+    min-height: 44px;
+  }
 }
