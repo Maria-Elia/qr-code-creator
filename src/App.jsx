@@ -21,11 +21,17 @@ export default function App() {
   return (
     <div className="app">
       <h1>QR Code Generator</h1>
-      <ContentPanel onPayloadChange={handlePayloadChange} />
-      <DesignPanel qrOptions={qrOptions} onChange={setQrOptions} />
-      {!hasContent && <p className="field-error">Enter some content above to generate a QR code.</p>}
-      <QrPreview ref={qrPreviewRef} options={qrOptions} />
-      <ExportButton onExport={handleExport} disabled={!hasContent} />
+      <div className="workspace">
+        <div className="controls-column">
+          <ContentPanel onPayloadChange={handlePayloadChange} />
+          <DesignPanel qrOptions={qrOptions} onChange={setQrOptions} />
+        </div>
+        <div className="preview-column">
+          {!hasContent && <p className="field-error">Enter some content above to generate a QR code.</p>}
+          <QrPreview ref={qrPreviewRef} options={qrOptions} />
+          <ExportButton onExport={handleExport} disabled={!hasContent} />
+        </div>
+      </div>
     </div>
   );
 }

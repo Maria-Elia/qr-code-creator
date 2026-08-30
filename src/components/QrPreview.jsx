@@ -8,6 +8,21 @@ function toLibraryOptions(options) {
   } else {
     delete dots.gradient;
   }
+
+  const dotSolidColor = options.dotsOptions.gradient
+    ? options.dotsOptions.gradient.colorStops[0].color
+    : options.dotsOptions.color;
+
+  const cornersSquareOptions =
+    options.eyesColorMode === 'same'
+      ? { ...options.cornersSquareOptions, color: dotSolidColor }
+      : options.cornersSquareOptions;
+
+  const cornersDotOptions =
+    options.eyesColorMode === 'same'
+      ? { ...options.cornersDotOptions, color: dotSolidColor }
+      : options.cornersDotOptions;
+
   return {
     width: options.width,
     height: options.height,
@@ -16,8 +31,8 @@ function toLibraryOptions(options) {
     data: options.data || ' ',
     image: options.image || undefined,
     dotsOptions: dots,
-    cornersSquareOptions: options.cornersSquareOptions,
-    cornersDotOptions: options.cornersDotOptions,
+    cornersSquareOptions,
+    cornersDotOptions,
     backgroundOptions: options.backgroundOptions,
     imageOptions: options.imageOptions,
   };

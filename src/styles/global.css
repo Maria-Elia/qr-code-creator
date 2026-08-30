@@ -1,2 +1,315 @@
 * { box-sizing: border-box; }
-body { margin: 0; font-family: 'Poppins', sans-serif; }
+
+:root {
+  --teal: #0f7f88;
+  --blue: #3d5cc4;
+  --pink: #e07fb3;
+  --pink-bright: #fc97d1;
+  --purple: #5540a5;
+  --bg: #eef3f6;
+  --bg-elevated: #ffffff;
+  --ink: #22343d;
+  --ink-soft: #5a6b73;
+  --line: #d7e2e6;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.app h1 {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--purple);
+  margin: 0;
+}
+
+.workspace {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.controls-column {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.preview-column {
+  flex: 0 0 320px;
+  position: sticky;
+  top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 860px) {
+  .workspace {
+    flex-direction: column-reverse;
+  }
+
+  .preview-column {
+    position: static;
+    align-self: center;
+  }
+}
+
+.content-panel,
+.design-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tab.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: white;
+}
+
+.field,
+.field-group > .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: 'Poppins', sans-serif;
+  padding: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+}
+
+.checkbox-field {
+  flex-direction: row;
+  align-items: center;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field-error {
+  color: #b02f2f;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.palette-presets {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-elevated);
+  outline: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.color-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hex-color-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hex-input {
+  width: 6.5rem;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.color-swatch-input {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.preset-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.preset-button {
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.preset-button.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: white;
+}
+
+.preset-button.icon-button {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gradient-preview {
+  height: 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+.gradient-stops {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.gradient-stop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.gradient-stop-label {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.swap-button {
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink-soft);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-family: 'Poppins', sans-serif;
+  align-self: flex-start;
+}
+
+.swap-button:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: white;
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--line);
+  border: none;
+  margin: 0;
+}
+
+.qr-preview {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.qr-preview canvas {
+  border-radius: 12px;
+}
+
+.primary-button,
+.secondary-button {
+  font-family: 'Fredoka', sans-serif;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.primary-button {
+  background: var(--purple);
+  color: white;
+}
+
+.primary-button:disabled {
+  background: var(--line);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+}
