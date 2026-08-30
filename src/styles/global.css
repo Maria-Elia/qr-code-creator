@@ -156,6 +156,10 @@ body {
   margin: 0;
 }
 
+.field-error-caution {
+  color: #a56e0d;
+}
+
 .palette-presets {
   display: flex;
   gap: 0.5rem;

@@ -4,6 +4,7 @@ import FramePreview from './components/FramePreview.jsx';
 import ContentPanel from './components/ContentPanel.jsx';
 import DesignPanel from './components/DesignPanel.jsx';
 import ExportButton from './components/ExportButton.jsx';
+import ContrastWarning from './components/ContrastWarning.jsx';
 
 export default function App() {
   const [qrOptions, setQrOptions] = useState(createDefaultQrOptions);
@@ -28,6 +29,7 @@ export default function App() {
         </div>
         <div className="preview-column">
           {!hasContent && <p className="field-error">Enter some content above to generate a QR code.</p>}
+          <ContrastWarning qrOptions={qrOptions} />
           <FramePreview ref={qrPreviewRef} options={qrOptions} />
           <ExportButton onExport={handleExport} disabled={!hasContent} />
         </div>
