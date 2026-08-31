@@ -7,7 +7,7 @@ export const BRAND_SWATCHES = [
   { label: 'Ink', hex: '#22343d' },
 ];
 
-export default function PalettePresets({ onPick }) {
+export default function PalettePresets({ onPick, disabled = false }) {
   return (
     <div className="palette-presets">
       {BRAND_SWATCHES.map((swatch) => (
@@ -18,6 +18,7 @@ export default function PalettePresets({ onPick }) {
           className="swatch"
           style={{ backgroundColor: swatch.hex }}
           onClick={() => onPick(swatch.hex)}
+          disabled={disabled}
         />
       ))}
     </div>

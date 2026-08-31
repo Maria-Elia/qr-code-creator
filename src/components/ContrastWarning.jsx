@@ -5,7 +5,7 @@ export default function ContrastWarning({ qrOptions }) {
 
   if (result.skipped) {
     return (
-      <p className="field-error field-error-caution">
+      <p className="field-error field-error-caution contrast-warning">
         Transparent background, make sure it still reads clearly on the surface you place it on.
       </p>
     );
@@ -19,14 +19,14 @@ export default function ContrastWarning({ qrOptions }) {
 
   if (result.level === "poor") {
     return (
-      <p className="field-error">
+      <p className="field-error contrast-warning">
         Very low contrast, this QR code likely won't scan. Use a much darker or lighter color.
       </p>
     );
   }
 
   return (
-    <p className="field-error field-error-caution">
+    <p className="field-error field-error-caution contrast-warning">
       Low contrast, this QR code may not scan reliably on some phones.
     </p>
   );

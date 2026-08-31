@@ -5,6 +5,8 @@ import ContentPanel from './components/ContentPanel.jsx';
 import DesignPanel from './components/DesignPanel.jsx';
 import ExportButton from './components/ExportButton.jsx';
 import ContrastWarning from './components/ContrastWarning.jsx';
+import Footer from './components/Footer.jsx';
+import ResponsiveScaler from './components/ResponsiveScaler.jsx';
 
 export default function App() {
   const [qrOptions, setQrOptions] = useState(createDefaultQrOptions);
@@ -20,20 +22,25 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <h1>QR Code Generator</h1>
-      <div className="workspace">
-        <div className="controls-column">
-          <ContentPanel onPayloadChange={handlePayloadChange} />
-          <DesignPanel qrOptions={qrOptions} onChange={setQrOptions} />
-        </div>
-        <div className="preview-column">
-          {!hasContent && <p className="field-error">Enter some content above to generate a QR code.</p>}
-          <ContrastWarning qrOptions={qrOptions} />
-          <FramePreview ref={qrPreviewRef} options={qrOptions} />
-          <ExportButton onExport={handleExport} disabled={!hasContent} />
+    <>
+      <div className="app">
+        <h1>QR Code Generator</h1>
+        <div className="workspace">
+          <div className="controls-column">
+            <ContentPanel onPayloadChange={handlePayloadChange} />
+            <DesignPanel qrOptions={qrOptions} onChange={setQrOptions} />
+          </div>
+          <div className="preview-column">
+            {!hasContent && <p className="field-error">Enter some content above to generate a QR code.</p>}
+            <ContrastWarning qrOptions={qrOptions} />
+            <ResponsiveScaler>
+              <FramePreview ref={qrPreviewRef} options={qrOptions} />
+            </ResponsiveScaler>
+            <ExportButton onExport={handleExport} disabled={!hasContent} />
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

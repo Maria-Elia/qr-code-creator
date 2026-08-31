@@ -1,4 +1,5 @@
 import HexColorInput from '../HexColorInput.jsx';
+import PalettePresets from '../PalettePresets.jsx';
 import FrameShapeIcon from './FrameShapeIcon.jsx';
 
 const FRAME_STYLES = [
@@ -63,20 +64,26 @@ export default function FrameFields({ qrOptions, onChange }) {
 
       <div className={borderDisabled ? 'field field-disabled' : 'field'}>
         Border color
-        <HexColorInput
-          value={frame.borderColor}
-          onChange={(hex) => setFrameField('borderColor', hex)}
-          disabled={borderDisabled}
-        />
+        <div className="color-row">
+          <PalettePresets onPick={(hex) => setFrameField('borderColor', hex)} disabled={borderDisabled} />
+          <HexColorInput
+            value={frame.borderColor}
+            onChange={(hex) => setFrameField('borderColor', hex)}
+            disabled={borderDisabled}
+          />
+        </div>
       </div>
 
       <div className={fillDisabled ? 'field field-disabled' : 'field'}>
         Fill color
-        <HexColorInput
-          value={frame.fillColor}
-          onChange={(hex) => setFrameField('fillColor', hex)}
-          disabled={fillDisabled}
-        />
+        <div className="color-row">
+          <PalettePresets onPick={(hex) => setFrameField('fillColor', hex)} disabled={fillDisabled} />
+          <HexColorInput
+            value={frame.fillColor}
+            onChange={(hex) => setFrameField('fillColor', hex)}
+            disabled={fillDisabled}
+          />
+        </div>
       </div>
 
       <label className={textDisabled ? 'field field-disabled' : 'field'}>
@@ -107,11 +114,14 @@ export default function FrameFields({ qrOptions, onChange }) {
 
       <div className={textColorDisabled ? 'field field-disabled' : 'field'}>
         Text color
-        <HexColorInput
-          value={frame[textColorField]}
-          onChange={(hex) => setFrameField(textColorField, hex)}
-          disabled={textColorDisabled}
-        />
+        <div className="color-row">
+          <PalettePresets onPick={(hex) => setFrameField(textColorField, hex)} disabled={textColorDisabled} />
+          <HexColorInput
+            value={frame[textColorField]}
+            onChange={(hex) => setFrameField(textColorField, hex)}
+            disabled={textColorDisabled}
+          />
+        </div>
       </div>
     </>
   );
