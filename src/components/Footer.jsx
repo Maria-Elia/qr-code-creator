@@ -18,7 +18,10 @@ export default function Footer() {
           </a>
         </div>
         <div className="site-footer__col site-footer__col--right">
-          <p className="site-footer__wordmark">QR Code Generator</p>
+          <p className="site-footer__wordmark">
+            QR Code Generator
+            <span className="sparkle" aria-hidden="true"></span>
+          </p>
           <a href="mailto:contact@mariaelia.dev" className="site-footer__email">
             contact@mariaelia.dev
           </a>
