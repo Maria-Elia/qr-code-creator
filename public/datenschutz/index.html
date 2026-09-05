@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz | QR Code Generator</title>
+  <meta name="description" content="Datenschutzerklärung für den QR Code Generator (qrcode.mariaelia.de)">
+  <link rel="canonical" href="https://qrcode.mariaelia.de/datenschutz/">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "QR Code Generator", "item": "https://qrcode.mariaelia.de/" },
+      { "@type": "ListItem", "position": 2, "name": "Datenschutz", "item": "https://qrcode.mariaelia.de/datenschutz/" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --teal: #0f7f88;
+      --purple: #5540a5;
+      --bg: #eef3f6;
+      --bg-elevated: #ffffff;
+      --ink: #22343d;
+      --ink-soft: #5a6b73;
+      --line: #d7e2e6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    @media (max-width: 1024px) {
+      html:has(.legal-page) {
+        font-size: 8.5px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html:has(.legal-page) {
+        font-size: 5.5px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      html:has(.legal-page) {
+        font-size: 4px;
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-elevated);
+      color: var(--ink);
+    }
+
+    .legal-page {
+      gap: 0;
+      max-width: 70rem;
+      margin: 0 auto;
+      padding: 6rem 2rem 8rem;
+      flex: 1 0 auto;
+    }
+
+    .legal-page__back {
+      display: inline-block;
+      margin-bottom: 3rem;
+      font-size: 1.4rem;
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .legal-page__back:hover {
+      text-decoration: underline;
+    }
+
+    .legal-page__title {
+      font-family: "Fredoka", sans-serif;
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      font-weight: 600;
+      color: var(--purple);
+      margin-bottom: 3rem;
+    }
+
+    .legal-page__section {
+      margin-bottom: 2.6rem;
+    }
+
+    .legal-page__section h2 {
+      font-family: "Fredoka", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--purple);
+      margin-bottom: 0.8rem;
+    }
+
+    .legal-page__section p {
+      font-size: 1.5rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    .legal-page__section a {
+      color: var(--teal);
+    }
+
+    .legal-page__section a:hover {
+      text-decoration: underline;
+    }
+
+    .site-footer.site-footer--plain {
+      position: relative;
+      z-index: 1;
+      margin-top: clamp(-4rem, -10vw, -2rem);
+      background: var(--bg-elevated);
+      flex-shrink: 0;
+      min-height: 26rem;
+    }
+
+    .site-footer--plain::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("../assets/img/footer-wave.png") no-repeat top / 100% 100%;
+      background-image: image-set(url("../assets/img/footer-wave.webp") type("image/webp"),
+          url("../assets/img/footer-wave.png") type("image/png"));
+      z-index: 0;
+    }
+
+    .site-footer--plain .site-footer__content {
+      position: relative;
+      z-index: 1;
+      text-align: right;
+      padding: 8vw 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.7rem;
+      margin: 9rem 4rem 3rem auto;
+    }
+
+    @media (max-width: 650px) {
+      .site-footer--plain .site-footer__content {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        margin-right: 1.5rem;
+      }
+    }
+
+    .site-footer--plain .site-footer__wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: "Fredoka", sans-serif;
+      font-size: 2.8rem;
+      color: #fee9fb;
+      background: rgba(156, 112, 206, 0.9);
+      border-radius: 0.8rem;
+      padding: 0.4rem 1rem;
+      margin: 0;
+    }
+
+    .site-footer--plain .site-footer__wordmark img {
+      width: 2.2rem;
+      height: 2.2rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .site-footer--plain .site-footer__email,
+    .site-footer--plain .site-footer__copyright {
+      color: #fee9fb;
+      font-size: 1.4rem;
+      opacity: 0.85;
+      background: rgba(156, 112, 206, 0.9);
+      border-radius: 0.8rem;
+      padding: 0.4rem 1rem;
+      text-decoration: none;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="legal-page">
+    <a href="../index.html" class="legal-page__back" id="legal-back-link">&larr; Zurück zum QR Code Generator</a>
+    <h1 class="legal-page__title">Datenschutzerklärung</h1>
+
+    <section class="legal-page__section">
+      <h2>Verantwortlicher</h2>
+      <p>
+        Maria Elia<br>
+        c/o Online-Impressum 10384<br>
+        Europaring 90<br>
+        53757 Sankt Augustin<br>
+        E-Mail: <a href="mailto:contact@mariaelia.dev">contact@mariaelia.dev</a>
+      </p>
+      <p>Weitere Angaben finden Sie im <a href="https://mariaelia.de/impressum/" target="_blank"
+          rel="noopener noreferrer">Impressum</a>.</p>
+    </section>
+
+    <section class="legal-page__section">
+      <h2>Hosting</h2>
+      <p>
+        Diese Website wird über GitHub Pages gehostet, einen Dienst der GitHub, Inc.
+        (88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Beim Aufruf der
+        Website verarbeitet GitHub automatisch technische Daten (z.&nbsp;B. IP-Adresse,
+        Datum und Uhrzeit der Anfrage, User-Agent), wie es beim Betrieb jedes Webservers
+        technisch notwendig ist. Details entnehmen Sie der
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+          target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub</a>.
+      </p>
+    </section>
+
+    <section class="legal-page__section">
+      <h2>Verarbeitung Ihrer QR-Code-Inhalte</h2>
+      <p>
+        Alle Inhalte, die Sie in den QR Code Generator eingibst (z.&nbsp;B. URLs, Text,
+        WLAN-Zugangsdaten, Kontaktdaten oder E-Mail-Angaben), werden ausschließlich lokal
+        in Ihrem Browser verarbeitet, um den QR-Code sowie die Vorschau zu erzeugen.
+        Diese Daten werden zu keinem Zeitpunkt an einen Server übertragen, dort
+        gespeichert oder an Dritte weitergegeben. Sie verlassen Ihr Gerät nicht und
+        gehen beim Neuladen der Seite verloren.
+      </p>
+    </section>
+
+    <section class="legal-page__section">
+      <h2>Reichweitenmessung mit GoatCounter</h2>
+      <p>
+        Diese Website nutzt GoatCounter, einen datenschutzfreundlichen Analysedienst, um
+        anonyme Zugriffsstatistiken (z.&nbsp;B. Seitenaufrufe, Referrer, Browser-Typ) zu
+        erfassen. GoatCounter setzt keine Cookies und erstellt keine
+        personenbezogenen Nutzerprofile. Eine Zuordnung der erfassten Daten zu Ihrer
+        Person ist nicht beabsichtigt und nach Angaben des Anbieters nicht möglich.
+        Details zur Datenverarbeitung finden Sie in der
+        <a href="https://www.goatcounter.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung
+          von GoatCounter</a>. Rechtsgrundlage ist unser berechtigtes Interesse (Art. 6
+        Abs. 1 lit. f DSGVO) an der anonymisierten, statistischen Auswertung der
+        Websitenutzung, um das Angebot zu verbessern.
+      </p>
+    </section>
+
+    <section class="legal-page__section">
+      <h2>Freiwillige Unterstützung über Ko-fi</h2>
+      <p>
+        Der Link &bdquo;Support the project&ldquo; führt zu Ko-fi, einem externen Anbieter
+        für freiwillige Spenden. Beim Klick verlassen Sie diese Website; für die
+        Datenverarbeitung auf Ko-fi gilt die
+        <a href="https://more.ko-fi.com/privacy-policy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung
+          von Ko-fi</a>.
+      </p>
+    </section>
+
+    <section class="legal-page__section">
+      <h2>Kontaktaufnahme</h2>
+      <p>
+        Wenn Sie mich per E-Mail kontaktieren, werden die von Ihnen mitgeteilten Daten
+        (Ihre E-Mail-Adresse sowie ggf. weitere Angaben in Ihrer Nachricht) ausschließlich
+        zur Bearbeitung Ihrer Anfrage gespeichert und verarbeitet. Rechtsgrundlage ist
+        Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche/vertragliche Anfrage) bzw. lit. f DSGVO
+        (berechtigtes Interesse an der Beantwortung von Anfragen).
+      </p>
+    </section>
+
+    <section class="legal-page__section">
+      <h2>Ihre Rechte</h2>
+      <p>
+        Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der
+        Verarbeitung Ihrer personenbezogenen Daten sowie ein Recht auf
+        Datenübertragbarkeit und Widerspruch gegen die Verarbeitung. Wenden Sie sich dazu
+        gerne an <a href="mailto:contact@mariaelia.dev">contact@mariaelia.dev</a>. Zudem
+        steht Ihnen ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde zu.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer--plain">
+    <div class="site-footer__content">
+      <p class="site-footer__wordmark">
+        QR Code Generator
+        <img src="../favicon.svg" alt="" aria-hidden="true">
+      </p>
+      <a href="mailto:contact@mariaelia.dev" class="site-footer__email">contact@mariaelia.dev</a>
+      <a href="https://mariaelia.de/impressum/" class="site-footer__email">Impressum</a>
+      <p class="site-footer__copyright">&copy; 2026 Maria Elia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var backLink = document.getElementById('legal-back-link');
+      if (!backLink) return;
+      backLink.addEventListener('click', function (event) {
+        var referrer = document.referrer;
+        var isRelated = false;
+        if (referrer) {
+          try {
+            var referrerHost = new URL(referrer).hostname;
+            isRelated = referrerHost === 'qrcode.mariaelia.de';
+          } catch (error) {
+            isRelated = false;
+          }
+        }
+        if (isRelated) {
+          event.preventDefault();
+          history.back();
+        }
+        // Otherwise: let the link's own href (qrcode.mariaelia.de homepage) navigate normally.
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

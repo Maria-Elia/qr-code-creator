@@ -28,6 +28,9 @@ export default function Footer() {
           <a href="https://mariaelia.de/impressum/" className="site-footer__email">
             Impressum
           </a>
+          <a href="/datenschutz/" className="site-footer__email">
+            Datenschutz
+          </a>
           <p className="site-footer__copyright">&copy; 2026 Maria Elia. All rights reserved.</p>
         </div>
       </div>
