@@ -1,0 +1,20 @@
+# QR Code Generator & Designer
+
+> Free, no-backend QR code generator and designer. Supports URL/text, WiFi,
+> vCard, and email content types, with customizable dot styles, corner
+> styles, colors/gradients, 11 frame styles, a logo, and a live contrast
+> checker for scannability. Runs entirely client-side, no data leaves the
+> browser.
+
+## Pages
+
+- [QR Code Generator](https://qrcode.mariaelia.de/): the tool itself. Pick a content type (URL/text, WiFi, vCard, email), customize the design, and export as PNG.
+- [Datenschutz](https://qrcode.mariaelia.de/datenschutz/): German-language privacy policy.
+
+## Key facts
+
+- Free to use, no account or sign-up required.
+- All QR content is processed locally in the browser; nothing is sent to a server.
+- Supported content types: URL/text, WiFi network credentials, vCard contact, email.
+- Design options: dot shapes, corner (eye) shapes, solid colors, gradients, 11 frame styles, logo embedding.
+- Built by Maria Elia (contact@mariaelia.dev).

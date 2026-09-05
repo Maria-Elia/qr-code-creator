@@ -1,21 +1,86 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>QR Code Generator & Designer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script data-goatcounter="https://qrcode-mariaelia.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#5540a5" />
+  <title>QR Code Generator & Designer</title>
+  <meta name="description"
+    content="Free QR code generator for URLs, WiFi, vCard contacts, and email. Customize dot styles, corner shapes, colors, gradients, a logo, and 11 frame styles, with a live contrast checker for scannability. Runs entirely in your browser, no sign-up, no data sent anywhere." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://qrcode.mariaelia.de/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="QR Code Generator & Designer" />
+  <meta property="og:description"
+    content="Free QR code generator for URLs, WiFi, vCard contacts, and email. Customize dot styles, corner shapes, colors, gradients, a logo, and 11 frame styles, with a live contrast checker for scannability." />
+  <meta property="og:url" content="https://qrcode.mariaelia.de/" />
+  <meta property="og:site_name" content="QR Code Generator" />
+  <meta property="og:image" content="https://qrcode.mariaelia.de/favicon.svg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="QR Code Generator & Designer" />
+  <meta name="twitter:description"
+    content="Free QR code generator for URLs, WiFi, vCard contacts, and email, with custom colors, logos, and frame styles." />
+  <meta name="twitter:image" content="https://qrcode.mariaelia.de/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <script data-goatcounter="https://qrcode-mariaelia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "QR Code Generator & Designer",
+      "url": "https://qrcode.mariaelia.de/",
+      "description": "Free QR code generator and designer supporting URL/text, WiFi, vCard, and email content types, with customizable dot styles, corner styles, colors/gradients, 11 frame styles, a logo, and a live contrast checker for scannability. Runs entirely client-side.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Works in any modern browser.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "URL, text, WiFi, vCard, and email QR codes",
+        "Custom dot and corner (eye) shapes",
+        "Solid colors and gradients",
+        "11 frame styles",
+        "Logo embedding",
+        "Live contrast/scannability checker",
+        "PNG export"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <noscript>
+    <main style="max-width: 40rem; margin: 4rem auto; padding: 0 1.5rem; font-family: sans-serif; color: #22343d;">
+      <h1>QR Code Generator & Designer</h1>
+      <p>
+        Free, no-backend QR code generator and designer. Create QR codes for
+        URLs, WiFi networks, vCard contacts, and email addresses, with
+        customizable dot styles, corner styles, colors and gradients, 11
+        frame styles, a logo, and a live contrast checker for scannability.
+        Runs entirely in your browser; no data is ever sent to a
+        server.
+      </p>
+      <p>This app requires JavaScript to run. Please enable JavaScript to use the QR Code Generator.</p>
+    </main>
+  </noscript>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
